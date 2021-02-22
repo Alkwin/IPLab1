@@ -5,15 +5,16 @@ class Triangle constructor(): Shape() {
 
     fun setBase(newBase: Double) = this.apply {
         base = newBase
-        onAreaChange()
+        onAreaChange("TRIANGLE")
     }
 
     fun setHeight(newHeight: Double) = this.apply {
-        onAreaChange()
         height = newHeight
+        onAreaChange("TRIANGLE")
     }
 
-    override fun onAreaChange() {
-        println("Variables changed, thus so did the Area (TRIANGLE)")
+    override fun onAreaChange(shapeType: String) {
+        super.onAreaChange(shapeType)
+        area = base * height / 2
     }
 }

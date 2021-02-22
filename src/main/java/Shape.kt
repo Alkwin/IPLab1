@@ -3,5 +3,7 @@ open class Shape constructor() {
 
     //fun getArea() = area // IMPLICIT
 
-    open fun onAreaChange() {}
+    open fun onAreaChange(shapeType: String) {
+        println("Variables changed, thus so did the Area for shape: $shapeType" )
+    }
 }

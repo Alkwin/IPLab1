@@ -5,15 +5,16 @@ class Rectangle constructor(): Shape() {
 
     fun setWidth(newWidth: Double) = this.apply {
         width = newWidth
-        onAreaChange()
+        onAreaChange("RECTANGLE")
     }
 
     fun setHeight(newHeight: Double) = this.apply {
-        onAreaChange()
         height = newHeight
+        onAreaChange("RECTANGLE")
     }
 
-    override fun onAreaChange() {
-        println("Variables changed, thus so did the Area (RECTANGLE)")
+    override fun onAreaChange(shapeType: String) {
+        super.onAreaChange(shapeType)
+        area = height * width
     }
 }
